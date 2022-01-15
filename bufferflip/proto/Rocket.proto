@@ -1,0 +1,9 @@
+syntax = "proto3";
+package io.github.phiysng;
+
+import "Lemon.proto";
+
+message Rocket {
+    Person p = 2;
+}
+  
