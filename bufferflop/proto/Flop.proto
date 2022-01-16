@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+enum RuleEnum{
+  DEFAULT = 0;
+  LOGIN = 1;  //登录
+}
+
+message HelloMessage{
+  int32 index = 1;
+  string name = 2;
+}
