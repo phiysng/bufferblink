@@ -8,9 +8,13 @@ cmake . -B build -D protobuf_BUILD_TESTS=off
 
 # if you dont need protoc.
 cmake . -B build -D protobuf_BUILD_TESTS=off -D protobuf_BUILD_PROTOC_BINARIES=OFF
+
+# if you wanna build protobuf from source
+cmake . -B build -D protobuf_BUILD_TESTS=off -D USE_PROTOBUF_FROM_SOURCE=ON
 ```
 
 ## TODO
 
-- [ ] C++ compiler is not gonna compile if use old version protoc(3.6.1 in Ubuntu 20.04)
-- [ ] move generated file to a separate project for reuse by multi projects.
+- [x] ship protoc in project.
+- [x] move generated file to a separate project for reuse by multi projects.
+- [x] add switch to use protobuf build from source or vise versa.

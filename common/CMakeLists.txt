@@ -17,7 +17,14 @@ file(GLOB PROTOBUF_MODELS_INCLUDES "generated/*.pb.cc" "generated/*.hpp")
 
 # subproject for shared protobuf files.
 add_library(${PROJECT_NAME} ${PROTOBUF_MODELS_INCLUDES})
-target_link_libraries(${PROJECT_NAME} PUBLIC protobuf::libprotobuf)
+
+if(${USE_PROTOBUF_FROM_SOURCE})
+set(protobuf_version protobuf::libprotobuf)
+else()
+set(protobuf_version protobuf_3_19_3)
+endif()
+
+target_link_libraries(${PROJECT_NAME} PUBLIC ${protobuf_version})
 target_include_directories(${PROJECT_NAME} PUBLIC generated/)
 set_property(TARGET ${PROJECT_NAME} PROPERTY
         MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
