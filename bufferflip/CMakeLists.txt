@@ -3,7 +3,7 @@ project(bufferflip)
 file(GLOB PROTOBUF_DEFINITION_FILES "${PROJECT_SOURCE_DIR}/proto/*.proto")
 
 foreach(file ${PROTOBUF_DEFINITION_FILES})
-    execute_process(COMMAND protoc -I "${PROJECT_SOURCE_DIR}/proto/" ${file} --cpp_out=./generated
+    execute_process(COMMAND ../binary/protoc -I "${PROJECT_SOURCE_DIR}/proto/" ${file} --cpp_out=./generated
             WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
             RESULT_VARIABLE PROTOBUF_RESULT
             OUTPUT_VARIABLE PROTOBUF_OUTPUT_VARIABLE)
