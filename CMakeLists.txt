@@ -12,7 +12,5 @@ add_subdirectory(protobuf-3.19.3/cmake)
 endif()
 
 add_subdirectory(common)
-# use protobuf from source file
 add_subdirectory(bufferflip)
-# use imported protobuf library
 add_subdirectory(bufferflop)
