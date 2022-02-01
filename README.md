@@ -13,6 +13,12 @@ cmake . -B build -D protobuf_BUILD_TESTS=off -D protobuf_BUILD_PROTOC_BINARIES=O
 cmake . -B build -D protobuf_BUILD_TESTS=off -D USE_PROTOBUF_FROM_SOURCE=ON
 ```
 
+## test
+```bash
+cd build
+ctest -C Debug/Release
+```
+
 ## TODO
 
 - [x] ship protoc in project.
